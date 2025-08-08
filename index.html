@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Giảng Tương Tác: IELTS Writing Task 1 - Line Chart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .lesson-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+        .slide-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .slide-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+        .chart-image {
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+        .option-label {
+            display: block;
+            background-color: #edf2f7;
+            padding: 0.8rem 1.25rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            font-size: 1rem;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+        }
+        .option-label:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        .option-input:checked + .option-label {
+            background-color: #63b3ed;
+            color: white;
+            border-color: #4299e1;
+            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.3);
+        }
+        .option-input {
+            display: none;
+        }
+        .button {
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover:enabled {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .quiz-check-button {
+            background-color: #dc2626;
+            color: white;
+        }
+        .quiz-check-button:hover:enabled {
+            background-color: #b91c1c;
+        }
+        .lesson-nav-button {
+            background-color: #48bb78;
+            color: white;
+        }
+        .lesson-nav-button:hover:enabled {
+            background-color: #38a169;
+        }
+        .feedback-message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .feedback-correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback-incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .final-message {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .restart-button {
+            background-color: #f6ad55;
+            color: white;
+            margin-top: 1rem;
+        }
+        .restart-button:hover:enabled {
+            background-color: #ed8936;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-6">Bài Giảng Tương Tác: IELTS Writing Task 1 - Line Chart</h1>
+
+        <div id="lesson-slides">
+            <div id="slide-0" class="lesson-slide">
+                <h2 class="slide-title">Slide 1: Giới thiệu Line Chart</h2>
+                <p class="slide-content">Chào mừng bạn đến với bài học chuyên sâu về **Line Chart** trong IELTS Writing Task 1. Đây là dạng bài phổ biến nhất, yêu cầu bạn mô tả sự thay đổi của các số liệu theo thời gian.</p>
+                <p class="slide-content">Để làm tốt, bạn cần biết cách mô tả xu hướng, so sánh các đường và báo cáo số liệu một cách chính xác. Hãy cùng bắt đầu!</p>
+            </div>
+
+            <div id="slide-1" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 2: Cấu trúc Line Chart Essay</h2>
+                <p class="slide-content">Cấu trúc 4 đoạn là tối ưu:</p>
+                <ul class="list-decimal list-inside slide-content">
+                    <li>**Introduction:** Paraphrase lại đề bài.</li>
+                    <li>**Overview:** Tóm tắt các xu hướng chính và đặc điểm nổi bật nhất (ví dụ: đường nào cao nhất, thấp nhất, xu hướng chung là tăng hay giảm).</li>
+                    <li>**Body Paragraph 1:** Mô tả chi tiết 1-2 xu hướng chính của các đường.</li>
+                    <li>**Body Paragraph 2:** So sánh các đường còn lại và các điểm giao nhau (crossover points).</li>
+                </ul>
+            </div>
+
+            <div id="slide-2" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 3: Từ vựng mô tả xu hướng tăng</h2>
+                <p class="slide-content">Để miêu tả xu hướng tăng, bạn có thể dùng các từ và cụm từ sau:</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>**Động từ:** `increased`, `rose`, `climbed`, `grew`, `soared`, `surged`.</li>
+                    <li>**Danh từ:** `an increase`, `a rise`, `a climb`, `a growth`.</li>
+                    <li>**Trạng từ:** `sharply`, `dramatically`, `significantly`, `steadily`, `gradually`.</li>
+                </ul>
+                <p class="slide-content">**Ví dụ:** `The number of students rose dramatically.`</p>
+            </div>
+
+            <div id="slide-3" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 4: Từ vựng mô tả xu hướng giảm</h2>
+                <p class="slide-content">Để miêu tả xu hướng giảm, bạn có thể dùng các từ và cụm từ sau:</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>**Động từ:** `decreased`, `fell`, `dropped`, `declined`, `plummeted`.</li>
+                    <li>**Danh từ:** `a decrease`, `a fall`, `a drop`, `a decline`.</li>
+                    <li>**Trạng từ:** `sharply`, `dramatically`, `significantly`, `steadily`, `gradually`.</li>
+                </ul>
+                <p class="slide-content">**Ví dụ:** `The figure fell sharply.`</p>
+            </div>
+
+            <div id="slide-4" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 5: Từ vựng mô tả ổn định/biến động</h2>
+                <p class="slide-content">Để miêu tả xu hướng ổn định hoặc biến động, bạn có thể dùng:</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>`remained stable`, `stayed constant`, `remained unchanged`.</li>
+                    <li>`fluctuated`, `oscillated`.</li>
+                    <li>`levelled off`, `bottomed out`, `peaked at`.</li>
+                </ul>
+                <p class="slide-content">**Ví dụ:** `The number of visits fluctuated significantly.`</p>
+            </div>
+
+            <div id="slide-5" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 6: Luyện tập 1</h2>
+                <p class="slide-content font-semibold text-blue-800">Biểu đồ dưới đây cho thấy số lượng khách du lịch đến 3 quốc gia từ năm 2000 đến 2010. Chọn câu Introduction phù hợp nhất.</p>
+                <img src="https://placehold.co/600x300/e0e0e0/000000?text=Line+Graph+Tourism+Data" alt="Line Graph of Tourism Data" class="chart-image">
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu hỏi: Chọn câu Introduction tốt nhất.</p>
+                    <div id="quiz-1-options" class="mb-4">
+                        <input type="radio" name="quiz1" id="q1o1" value="A" class="option-input"><label for="q1o1" class="option-label">A. The line graph shows the number of tourists who visited three countries between 2000 and 2010.</label>
+                        <input type="radio" name="quiz1" id="q1o2" value="B" class="option-input"><label for="q1o2" class="option-label">B. This graph is about tourists in three countries.</label>
+                        <input type="radio" name="quiz1" id="q1o3" value="C" class="option-input"><label for="q1o3" class="option-label">C. The chart illustrates how many people went to three places over a ten-year period.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="1" data-answer="A">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-1"></div>
+                </div>
+            </div>
+
+            <div id="slide-6" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 7: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là A.** Câu A paraphrase đề bài một cách rõ ràng và chính xác. Câu B quá đơn giản, còn câu C sử dụng từ ngữ không phù hợp ("went to places").</p>
+            </div>
+
+            <div id="slide-7" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 8: Luyện tập 2</h2>
+                <p class="slide-content font-semibold text-blue-800">Biểu đồ dưới đây cho thấy số lượng người dùng 3 ứng dụng từ 2015 đến 2020. Chọn câu Overview phù hợp nhất.</p>
+                <img src="https://placehold.co/600x300/e0e0e0/000000?text=Line+Graph+App+Users" alt="Line Graph of App Users" class="chart-image">
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu hỏi: Chọn câu Overview phù hợp nhất.</p>
+                    <div id="quiz-2-options" class="mb-4">
+                        <input type="radio" name="quiz2" id="q2o1" value="A" class="option-input"><label for="q2o1" class="option-label">A. Overall, the number of users of App A showed an upward trend, while the other two fluctuated.</label>
+                        <input type="radio" name="quiz2" id="q2o2" value="B" class="option-input"><label for="q2o2" class="option-label">B. The number of App A users was 50 million in 2015.</label>
+                        <input type="radio" name="quiz2" id="q2o3" value="C" class="option-input"><label for="q2o3" class="option-label">C. The number of App A users increased from 50 to 150 million.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="2" data-answer="A">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-2"></div>
+                </div>
+            </div>
+
+            <div id="slide-8" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 9: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là A.** Câu A tóm tắt xu hướng chung mà không dùng số liệu cụ thể. Các câu B và C đều chứa số liệu chi tiết nên không phù hợp cho đoạn Overview.</p>
+            </div>
+
+            <div id="slide-9" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 10: Luyện tập 3</h2>
+                <p class="slide-content font-semibold text-blue-800">Biểu đồ dưới đây cho thấy số lượng sản phẩm được bán bởi hai công ty từ 2012 đến 2018. Chọn câu so sánh phù hợp nhất.</p>
+                <img src="https://placehold.co/600x300/e0e0e0/000000?text=Line+Graph+Company+Sales" alt="Line Graph of Company Sales" class="chart-image">
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu hỏi: Giả sử Công ty A bán 800 sản phẩm và Công ty B bán 400 sản phẩm vào năm 2015. Câu nào đúng?</p>
+                    <div id="quiz-3-options" class="mb-4">
+                        <input type="radio" name="quiz3" id="q3o1" value="A" class="option-input"><label for="q3o1" class="option-label">A. The sales of Company B were double that of Company A in 2015.</label>
+                        <input type="radio" name="quiz3" id="q3o2" value="B" class="option-input"><label for="q3o2" class="option-label">B. Company A sold twice as many products as Company B in 2015.</label>
+                        <input type="radio" name="quiz3" id="q3o3" value="C" class="option-input"><label for="q3o3" class="option-label">C. The sales of both companies increased from 2012 to 2018.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="3" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-3"></div>
+                </div>
+            </div>
+
+            <div id="slide-10" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 11: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là B.** Vì 800 gấp đôi 400. Câu A sai vì nói ngược lại, còn câu C là một Overview chung, không phải là câu so sánh cụ thể cho năm 2015.</p>
+            </div>
+            
+            <div id="slide-11" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 12: Luyện tập 4</h2>
+                <p class="slide-content font-semibold text-blue-800">Biểu đồ dưới đây cho thấy giá vàng từ 2010 đến 2014. Chọn câu miêu tả sự biến động phù hợp nhất.</p>
+                <img src="https://placehold.co/600x300/e0e0e0/000000?text=Line+Graph+Gold+Price" alt="Line Graph of Gold Price" class="chart-image">
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu hỏi: Chọn câu miêu tả phù hợp nhất.</p>
+                    <div id="quiz-4-options" class="mb-4">
+                        <input type="radio" name="quiz4" id="q4o1" value="A" class="option-input"><label for="q4o1" class="option-label">A. The price of gold continuously increased throughout the period.</label>
+                        <input type="radio" name="quiz4" id="q4o2" value="B" class="option-input"><label for="q4o2" class="option-label">B. The price of gold fluctuated slightly before falling at the end of the period.</label>
+                        <input type="radio" name="quiz4" id="q4o3" value="C" class="option-input"><label for="q4o3" class="option-label">C. The price of gold reached its peak in 2011.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="4" data-answer="C">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-4"></div>
+                </div>
+            </div>
+
+            <div id="slide-12" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 13: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là C.** "Peaked" là một từ quan trọng để mô tả điểm cao nhất của đường. Các câu A và B không mô tả chính xác biểu đồ.</p>
+            </div>
+            
+            <div id="slide-13" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 14: Luyện tập 5</h2>
+                <p class="slide-content font-semibold text-blue-800">Biểu đồ dưới đây cho thấy số lượng người dùng Facebook và Twitter từ 2005 đến 2015. Chọn câu miêu tả điểm giao nhau phù hợp nhất.</p>
+                <img src="https://placehold.co/600x300/e0e0e0/000000?text=Line+Graph+Social+Media" alt="Line Graph of Social Media Users" class="chart-image">
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu hỏi: Giả sử đường của Facebook và Twitter giao nhau vào năm 2009. Câu nào đúng?</p>
+                    <div id="quiz-5-options" class="mb-4">
+                        <input type="radio" name="quiz5" id="q5o1" value="A" class="option-input"><label for="q5o1" class="option-label">A. The number of Facebook users was consistently higher than Twitter users.</label>
+                        <input type="radio" name="quiz5" id="q5o2" value="B" class="option-input"><label for="q5o2" class="option-label">B. The number of Twitter users overtook Facebook users in 2009.</label>
+                        <input type="radio" name="quiz5" id="q5o3" value="C" class="option-input"><label for="q5o3" class="option-label">C. Both social media platforms had the same number of users in 2009.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="5" data-answer="C">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-5"></div>
+                </div>
+            </div>
+
+            <div id="slide-14" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 15: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là C.** "Điểm giao nhau" có nghĩa là hai giá trị bằng nhau tại một thời điểm cụ thể. Câu A và B đều sai. Câu B sẽ đúng nếu có thêm thông tin về việc đường Twitter vượt qua đường Facebook sau đó.</p>
+            </div>
+
+            <div id="slide-15" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 16: Luyện tập 6</h2>
+                <p class="slide-content font-semibold text-blue-800">Biểu đồ dưới đây cho thấy dân số của 4 thành phố từ 1980 đến 2020. Chọn câu miêu tả phù hợp nhất.</p>
+                <img src="https://placehold.co/600x300/e0e0e0/000000?text=Line+Graph+Population+Data" alt="Line Graph of Population Data" class="chart-image">
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu hỏi: Câu nào miêu tả đúng xu hướng chính?</p>
+                    <div id="quiz-6-options" class="mb-4">
+                        <input type="radio" name="quiz6" id="q6o1" value="A" class="option-input"><label for="q6o1" class="option-label">A. City A's population was 10 million in 1980.</label>
+                        <input type="radio" name="quiz6" id="q6o2" value="B" class="option-input"><label for="q6o2" class="option-label">B. The populations of all four cities increased over the period.</label>
+                        <input type="radio" name="quiz6" id="q6o3" value="C" class="option-input"><label for="q6o3" class="option-label">C. The populations of City B and C decreased, while City A and D increased.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="6" data-answer="B">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-6"></div>
+                </div>
+            </div>
+
+            <div id="slide-16" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 17: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là B.** Câu B là một câu Overview tốt vì nó nhóm tất cả các đối tượng lại với nhau để đưa ra một xu hướng chung. Đây là kỹ năng quan trọng để tránh chỉ liệt kê số liệu.</p>
+            </div>
+            
+            <div id="slide-17" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 18: Luyện tập 7</h2>
+                <p class="slide-content font-semibold text-blue-800">Biểu đồ dưới đây cho thấy giá điện và gas từ 1990 đến 2020. Chọn câu miêu tả Body Paragraph phù hợp.</p>
+                <img src="https://placehold.co/600x300/e0e0e0/000000?text=Line+Graph+Energy+Price" alt="Line Graph of Energy Price" class="chart-image">
+                <div class="interactive-section mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-4">Câu hỏi: Giả sử giá điện tăng từ 20 USD lên 80 USD và giá gas tăng từ 10 USD lên 40 USD. Câu nào đúng?</p>
+                    <div id="quiz-7-options" class="mb-4">
+                        <input type="radio" name="quiz7" id="q7o1" value="A" class="option-input"><label for="q7o1" class="option-label">A. The price of electricity and gas was about 20 and 10 USD in 1990, rising to 80 and 40 USD respectively by 2020.</label>
+                        <input type="radio" name="quiz7" id="q7o2" value="B" class="option-input"><label for="q7o2" class="option-label">B. The price of electricity was more expensive than gas in 1990.</label>
+                        <input type="radio" name="quiz7" id="q7o3" value="C" class="option-input"><label for="q7o3" class="option-label">C. Overall, prices for both increased over the period.</label>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="button quiz-check-button" data-quiz-id="7" data-answer="A">Kiểm Tra</button>
+                    </div>
+                    <div class="feedback-message hidden" id="feedback-7"></div>
+                </div>
+            </div>
+
+            <div id="slide-18" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 19: Giải thích</h2>
+                <p class="slide-content">**Đáp án đúng là A.** Câu A cung cấp số liệu cụ thể và mô tả chi tiết xu hướng, rất phù hợp với một đoạn Body Paragraph. Các câu B và C đều là những nhận định mang tính Overview.</p>
+            </div>
+            
+            <div id="slide-19" class="lesson-slide hidden">
+                <h2 class="slide-title">Slide 20: Tổng kết và lời khuyên</h2>
+                <p class="slide-content">Chúc mừng bạn đã hoàn thành bài giảng! Hãy nhớ những điểm chính sau:</p>
+                <ul class="list-disc list-inside slide-content">
+                    <li>Dùng đúng cấu trúc 4 đoạn.</li>
+                    <li>Sử dụng từ vựng đa dạng để miêu tả xu hướng và so sánh.</li>
+                    <li>Luôn viết Overview và không dùng số liệu cụ thể trong đó.</li>
+                    <li>Tránh lỗi đưa ra ý kiến cá nhân.</li>
+                </ul>
+            </div>
+
+            <div id="final-screen" class="lesson-slide hidden">
+                <h2 class="slide-title">Hoàn Thành Bài Giảng!</h2>
+                <p class="final-message">🎉 Chúc mừng! Bạn đã hoàn thành bài giảng chuyên sâu về IELTS Writing Task 1 Line Chart.</p>
+                <button id="restart-lesson-button" class="button restart-button w-full mt-8">Học Lại Bài Giảng</button>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-8">
+            <button id="prev-slide-button" class="button lesson-nav-button" disabled>Slide Trước</button>
+            <span id="slide-indicator" class="text-lg font-semibold text-gray-700">Slide 1 / 20</span>
+            <button id="next-slide-button" class="button lesson-nav-button">Slide Tiếp Theo</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.lesson-slide');
+        const prevButton = document.getElementById('prev-slide-button');
+        const nextButton = document.getElementById('next-slide-button');
+        const slideIndicator = document.getElementById('slide-indicator');
+        const restartLessonButton = document.getElementById('restart-lesson-button');
+        const totalLessonSlides = slides.length - 1;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                }
+            });
+
+            prevButton.disabled = (index === 0);
+            
+            if (index < totalLessonSlides) {
+                nextButton.classList.remove('hidden');
+            } else {
+                nextButton.classList.add('hidden');
+            }
+
+            if (index < totalLessonSlides) {
+                slideIndicator.textContent = `Slide ${index + 1} / ${totalLessonSlides}`;
+            } else {
+                slideIndicator.textContent = `Hoàn thành!`;
+            }
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex);
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentSlideIndex < totalLessonSlides) {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }
+        });
+
+        restartLessonButton.addEventListener('click', () => {
+            currentSlideIndex = 0;
+            showSlide(currentSlideIndex);
+            document.querySelectorAll('.interactive-section input').forEach(input => {
+                input.disabled = false;
+                input.checked = false;
+            });
+            document.querySelectorAll('.feedback-message').forEach(feedback => {
+                feedback.classList.add('hidden');
+                feedback.textContent = '';
+                feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+            });
+            document.querySelectorAll('.quiz-check-button').forEach(button => {
+                button.disabled = true;
+                button.classList.remove('hidden');
+            });
+        });
+
+        document.querySelectorAll('.quiz-check-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const quizId = e.target.dataset.quizId;
+                const correctAnswer = e.target.dataset.answer;
+                const feedbackDiv = document.getElementById(`feedback-${quizId}`);
+                const selectedOption = document.querySelector(`input[name="quiz${quizId}"]:checked`);
+                
+                feedbackDiv.classList.remove('hidden', 'feedback-correct', 'feedback-incorrect');
+                
+                if (selectedOption && selectedOption.value === correctAnswer) {
+                    feedbackDiv.classList.add('feedback-correct');
+                    feedbackDiv.textContent = 'Chính xác! 🎉';
+                    
+                    e.target.disabled = true;
+                    setTimeout(() => {
+                        currentSlideIndex++;
+                        showSlide(currentSlideIndex);
+                    }, 1500);
+                } else {
+                    feedbackDiv.classList.add('feedback-incorrect');
+                    feedbackDiv.textContent = 'Chưa đúng, hãy thử lại!';
+                }
+            });
+        });
+
+        document.querySelectorAll('.interactive-section input[type="radio"]').forEach(input => {
+            input.addEventListener('change', (e) => {
+                const quizId = e.target.name.replace('quiz', '');
+                const checkButton = document.querySelector(`.quiz-check-button[data-quiz-id="${quizId}"]`);
+                if (checkButton) {
+                    checkButton.disabled = false;
+                }
+            });
+        });
+
+        document.querySelectorAll('.quiz-check-button').forEach(button => {
+            button.disabled = true;
+        });
+
+        showSlide(currentSlideIndex);
+    </script>
+</body>
+</html>
